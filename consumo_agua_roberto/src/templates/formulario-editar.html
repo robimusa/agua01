@@ -1,0 +1,10 @@
+<h3>Aqui pudedes editar el consumo para la fecha indicada:</h3>
+<form action="/editar-confirmado" method="POST">
+    <input type="hidden" value="{{ datos._id }}" name="id">
+    <input type="date" name="fecha" placeholder="Fecha" value = {{ datos.fecha }} >
+    <input type="number" name="manana" placeholder="Mañana" value = {{ datos.manana }}>
+    <input type="number" name="mediodia" placeholder="Mediodia" value = {{ datos.mediodia }}>
+    <input type="number" name="tarde" placeholder="Tarde" value = {{ datos.tarde }}>
+    <input type="number" name="noche" placeholder="Noche" value = {{ datos.noche }}>
+    <button type="submit">ACTUALIZAR!</button>
+</form>

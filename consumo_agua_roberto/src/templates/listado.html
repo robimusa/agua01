@@ -1,0 +1,36 @@
+<!-- MUESTRA UN LISTADO DE LOS REGISTROS -->
+<!-- Los registros a mostrar viene dado pora la variable que le pasamos registros -->
+<!-- Le pasamos el título del listado por la variable tituloDeListado -->
+
+<br>
+<h2>{{ tituloDelListado }}</h2>
+<table class="table table-sm table-striped table-bordered">
+    <thead>
+        <tr class="bg-primary">
+            <td>Acciones</td>
+            <td>Fecha</td>
+            <td>Mañana</td>
+            <td>Mediodia</td>
+            <td>Tarde</td>
+            <td>Noche</td>
+            <td>Total (Litros)</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for consumo in datos %}
+            <input type="hidden" value="{{ consumo._id }}" name="id">
+            <tr>
+                <td>
+                    <a class="btn btn-sm btn-success" href="/editar/{{ consumo._id }}">Editar</a>
+                    <a class="btn btn-sm btn-danger" href="/borrar/{{ consumo._id }}">Borrar</a>
+                </td>
+                <td>{{ consumo.fecha }}</td>
+                <td>{{ consumo.manana }}</td>
+                <td>{{ consumo.mediodia }}</td>
+                <td>{{ consumo.tarde }}</td>
+                <td>{{ consumo.noche }}</td>
+                <td>{{ consumo.total_consumo_diario }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
